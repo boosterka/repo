@@ -3,7 +3,7 @@ systemctl restart frr
 
 systemctl enable --now frr
 
-
+natural
 vtysh << EOF
 conf t
 router ospf
