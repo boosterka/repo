@@ -34,7 +34,7 @@ subnet6 192:168:d::/122 {
   range6 192:168:d::2 192:168:d::3e;
 
   host hq-srv {
-    #host-identifier option dhcp6.client-id \"!!CLIENT-ID!!\";
+    #host-identifier option dhcp6.client-id 00:01:00:01:2d:68:b8:99:bc:24:11:ce:c2:cf;
     fixed-address6 192:168:d::6;
     fixed-prefix6 192:168:d::/122;
   }
