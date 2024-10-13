@@ -10,12 +10,12 @@ ignore-client-updates;
 ddns-update-style interim;
 use-host-decl-names on;
 
-subnet 192.168.0.0 netmask 255.255.255.192 {
+subnet 192.168.0.0 netmask 255.255.255.0 {
   range 192.168.0.11 192.168.0.61;
   option routers 192.168.0.1;
 
   host hq-srv {
-    hardware ethernet !!INPUT MAC!!;
+    hardware ethernet bc:24:11:a0:b7:2c;
     fixed-address 192.168.0.60;
   }
 }" | tee /etc/dhcp/dhcpd.conf > /dev/null
@@ -34,8 +34,11 @@ subnet6 192:168:d::/122 {
   range6 192:168:d::2 192:168:d::3e;
 
   host hq-srv {
-    host-identifier option dhcp6.client-id \"!!CLIENT-ID!!\";
+    #host-identifier option dhcp6.client-id \"!!CLIENT-ID!!\";
     fixed-address6 192:168:d::6;
     fixed-prefix6 192:168:d::/122;
   }
 }" | tee /etc/dhcp/dhcpd6.conf > /dev/null
+
+
+systemctl restart isc-dhcp-server
