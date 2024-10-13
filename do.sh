@@ -15,7 +15,7 @@ conf t
 router ospf6
 ospf6 router-id 1.1.1.100
 exit
-interface gre1
+int gre1
 ipv6 ospf6 area 0
 exit
 interface eth1
