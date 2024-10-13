@@ -18,7 +18,7 @@ subnet 192.168.0.0 netmask 255.255.255.192 {
     hardware ethernet !!INPUT MAC!!;
     fixed-address 192.168.0.60;
   }
-}" | sudo tee /etc/dhcp/dhcpd.conf > /dev/null
+}" | tee /etc/dhcp/dhcpd.conf > /dev/null
 
 
 echo "authoritative;
@@ -38,4 +38,4 @@ subnet6 192:168:d::/122 {
     fixed-address6 192:168:d::6;
     fixed-prefix6 192:168:d::/122;
   }
-}" | sudo tee /etc/dhcp/dhcpd6.conf > /dev/null
+}" | tee /etc/dhcp/dhcpd6.conf > /dev/null
