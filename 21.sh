@@ -25,3 +25,5 @@ do wr
 exit
 exit
 EOF
+cat /etc/frr/frr.conf
+echo 'reboot'
