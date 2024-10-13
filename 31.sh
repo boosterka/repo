@@ -55,10 +55,10 @@ echo "interface eth1
     prefix 192:168:d::/122 {
         AdvRouterAddr on;
     };
-};" | sudo tee /etc/radvd.conf > /dev/null
+};" | tee /etc/radvd.conf > /dev/null
 
 
-systemctl restart radvd && sudo systemctl restart isc-dhcp-server
+systemctl restart radvd && systemctl restart isc-dhcp-server
 
 
 echo "route print -6"
