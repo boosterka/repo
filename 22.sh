@@ -1,5 +1,5 @@
 sed -i 's/^ospfd=no/ospfd=yes/' /etc/frr/daemons
-sed -i 's/^ospfd6=no/ospfd6=yes/' /etc/frr/daemons
+sed -i 's/^ospf6d=no/ospf6d=yes/' /etc/frr/daemons
 
 systemctl restart frr
 
