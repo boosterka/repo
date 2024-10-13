@@ -42,3 +42,23 @@ subnet6 192:168:d::/122 {
 
 
 systemctl restart isc-dhcp-server
+
+
+
+
+echo "interface eth1
+{
+    AdvSendAdvert on;
+    AdvManagedFlag on;
+    AdvOtherConfigFlag on;
+
+    prefix 192:168:d::/122 {
+        AdvRouterAddr on;
+    };
+};" | sudo tee /etc/radvd.conf > /dev/null
+
+
+systemctl restart radvd && sudo systemctl restart isc-dhcp-server
+
+
+echo "route print -6"
