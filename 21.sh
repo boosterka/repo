@@ -17,7 +17,7 @@ exit
 int gre1
 ipv6 ospf6 area 0
 exit
-interface eth1
+int eth1
 ipv6 ospf6 area 0
 exit
 do wr
