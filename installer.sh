@@ -1,5 +1,9 @@
 systemctl restart frr
+
+
 systemctl enable --now frr
+
+
 vtysh << EOF
 conf t
 router ospf
@@ -18,4 +22,6 @@ interface eth1
 ipv6 ospf6 area 0
 exit
 do wr
+exit
+exit
 EOF
