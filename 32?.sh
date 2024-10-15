@@ -16,7 +16,7 @@ subnet 172.16.0.0 netmask 255.255.255.0 {
   option routers 172.16.0.33;
 
   host hq-srv {
-    hardware ethernet bc:24:11:a0:b7:2c;
+    hardware ethernet bc:24:11:87:df:fa;
     fixed-address 172.16.0.42;
   }
 }" | tee /etc/dhcp/dhcpd.conf > /dev/null
